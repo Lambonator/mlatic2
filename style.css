@@ -1,0 +1,239 @@
+body {
+	font-family: "Montserrat", sans-serif;
+	color: #454545;
+	margin: 0px;
+	padding: 0px;
+	background-color: #f8f8f8;
+	background-image: url('./images/unhealthy_food.jpg');
+	background-size: cover;
+	/* Upraví obrázek tak, aby pokryl celou plochu */
+	background-position: center;
+	/* Udrží obrázek vycentrovaný */
+	background-repeat: no-repeat;
+	/* Zabrání opakování obrázku */
+}
+
+
+/* Nastavení pro centrální kontejner stránky */
+.page {
+	width: 100%;
+	/* Celá šířka stránky */
+	max-width: 960px;
+	/* Maximální šířka pro centrální část */
+	margin: 0 auto;
+	/* Vycentrování */
+}
+
+/* Header */
+header {
+	width: 100%;
+	/* Celá šířka pro header */
+	text-align: center;
+	/* Text ve headeru bude vycentrován */
+	padding-top: 1em;
+}
+
+header span {
+	font-size: 60px;
+	color: #f16059;
+}
+
+/* Footer */
+footer {
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+footer p {
+	font-family: "Montserrat", sans-serif;
+	text-transform: uppercase;
+	font-size: 12px;
+	margin: 0;
+}
+
+.question-display {
+	position: absolute;
+	top: 50%;
+	right: 300px;
+	transform: translateY(-50%);
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	max-width: 250px;
+	font-size: 16px;
+}
+
+.question-display h3 {
+	margin: 0 0 10px 0;
+	font-size: 18px;
+	color: #454545;
+}
+
+.question-display ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.question-display li {
+	margin-bottom: 5px;
+	color: #333;
+}
+
+/* Kontejner pro hlavní obsah */
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 100%;
+	/* Zajistíme, že kontejner zabírá celou šířku */
+	margin: 0 auto;
+	position: relative;
+}
+
+.mlatic_hlava {
+	display: block;
+	/* Obrázek jako blokový element */
+	width: 50%;
+	/* Šířka obrázku (změň podle potřeby) */
+	margin: 0 auto;
+	/* Vycentrování obrázku */
+	max-width: none;
+	/* Zajistíme, že nebude omezen šířkou */
+}
+
+.ball {
+	width: 100%;
+	/* Zajistíme, že kontejner bude mít 100% šířku */
+	text-align: center;
+	/* Text a obrázek budou vycentrovány */
+	display: block;
+	/* Blokový prvek pro správné zarovnání */
+	margin: 0 auto;
+	/* Ujistíme se, že bude vycentrován */
+}
+
+#answer {
+	font-weight: bold;
+	/* Tučný text */
+	font-size: 24px;
+	/* Velikost písma */
+	color: #333;
+	/* Barva textu */
+	text-align: center;
+	/* Vycentrování textu */
+	/* Vzdálenost nad textem */
+	background-color: rgba(255, 255, 255, 0.7);
+	/* Poloprůhledné pozadí pro lepší čitelnost */
+	padding: 10px;
+	/* Vnitřní okraje */
+	border-radius: 5px;
+	/* Zaoblené rohy */
+}
+
+#headImage2 {
+	max-width: 50px;
+	height: auto;
+	margin-right: -10px;
+	position: relative;
+	z-index: 2;
+}
+
+#headImage {
+	max-width: 50px;
+	height: auto;
+	margin-left: -10px;
+}
+
+#questionButton {
+	font: 26px 'Montserrat', Helvetica, Arial, sans-serif;
+	border-radius: 5px;
+	border: none;
+	color: #f8f8f8;
+	background-color: #f16059;
+	padding: 10px 75px;
+	margin: 0;
+}
+
+/* Tlačítko skryté zpočátku */
+#secretButton {
+	display: none;
+	/* Další stylování pro tlačítko */
+}
+
+/* Tlačítko je viditelné po přidání třídy .show */
+#secretButton.show {
+	display: block;
+	/* Možná nějaký efekt, aby se tlačítko objevilo */
+}
+
+#popup {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(69, 153, 43, 0.9);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	z-index: 10000;
+	/* Zvyšte z-index */
+}
+
+#popup img {
+	width: 200px;
+	/* Můžete upravit podle potřeby */
+	height: auto;
+}
+
+
+/* Responzivní úpravy pro menší obrazovky */
+@media (max-width: 768px) {
+	.container {
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+
+	#headImage,
+	#headImage2 {
+		max-width: 40px;
+	}
+
+	#questionButton {
+		padding: 10px 50px;
+	}
+
+/* Na větších obrazovkách (desktop) */
+@media (min-width: 769px) {
+	.container {
+		display: flex;
+		justify-content: space-between;
+		/* Oblast otázky vpravo */
+		gap: 20px;
+	}
+
+	.question-display {
+		position: absolute;
+		top: 50%;
+		right: 30px;
+		/* Posuneme sekci s otázkami vpravo */
+		transform: translateY(-50%);
+		background-color: rgba(255, 255, 255, 0.8);
+		padding: 15px;
+		border-radius: 8px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		max-width: 250px;
+		font-size: 16px;
+		width: auto;
+	}
+
+	#questionButton {
+		padding: 10px 75px;
+	}
+}
+
+}
